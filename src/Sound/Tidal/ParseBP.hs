@@ -511,6 +511,8 @@ pRatio = do s <- sign
 pRatioChar :: Fractional a => MyParser a
 pRatioChar = do char 'w'
                 return $ 1
+             <|> do char 'd'
+                    return $ 1.5
              <|> do char 'h'
                     return $ 0.5
              <|> do char 'q'
